@@ -1,0 +1,46 @@
+<ons-page>
+
+    <ons-toolbar>
+        <div class="left">
+            <ons-back-button>Back</ons-back-button>
+        </div>
+        <div class="center">初めての方</div>
+    </ons-toolbar>
+
+    <div style="text-align: center">
+        氏名
+        <input type="text" name="name" id="name">
+        <br/>
+        性別
+        <label>
+        <input type="radio" name="sex" id="sex" value="1">男
+        </label>
+        <label>
+        <input type="radio" name="sex" id="sex" value="2">女
+        </label>
+        <br/>
+        生年月日
+        <input type="date" name="birth_date" id="birth_date">
+        <br/>
+        身長
+        <input type="text" name="height" id="height">
+        <br/>
+        体重
+        <input type="text" name="weight" id="weight">
+        <br/>
+        競技名
+        <input type="text" name="kyougi" id="kyougi">
+        <br/>
+        チーム名
+        <input type="text" name="team_name" id="team_name">
+        <br/>
+        ポジション
+        <input type="text" name="position" id="position">
+        <br/>
+
+        <ons-button onclick="saveData()">
+        登録
+        </ons-button>
+    </div>
+
+</ons-page>

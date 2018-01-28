@@ -1,0 +1,29 @@
+// This is a JavaScript file
+//mobile backendのAPIキーを設定
+var appKey    = "81ac7649ef949ec52a6549247437d9aa7282fe5f53249fc7a0eb723f4e3163fd";
+var clientKey = "2f95732d5d8b0234512993e1b944236bf49b79a037a954de9c07101c904fc0a2";
+var ncmb = new NCMB(appKey, clientKey);
+
+
+//データをmobile backendに保存するメソッド
+function saveData(){
+    //クラス名を指定して新規クラスを作成
+    var Data = ncmb.DataStore("PersonalInfo");
+
+    //Dataクラスのインスタンスを作成
+    var data = new Data();
+
+    //作成したインスタンスのaisatsuというフィールドに文字データを設定
+    data.set("aisatsu", "hello, world!");
+
+    //設定したデータをmobile backendに保存
+    data.save()
+        .then(function(object) {
+              //成功する時の処理
+              $("#message").html("<p>データ保存に成功!</p>");
+          })
+        .catch(function(error) {
+              //エラーが発生する時の処理
+              $("#message").html("error:" + error.message);
+          });
+}
